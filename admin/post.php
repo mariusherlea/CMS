@@ -29,36 +29,38 @@
                 <div class="col-lg-12">
 
 
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Author</th>
-                                    <th>Title</th>
-                                    <th>Categories</th>
-                                    <th>Status</th>
-                                    <th>Image</th>
-                                    <th>Tags</th>
-                                    <th>Comments</th>
-                                    <th>Date</th>
+                        <?php
+                    if(isset ($_GET['source'])){
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Marius</td>
-                                    <td>Bootstrap framework</td>
-                                    <td>Bootstrap</td>
-                                    <td>Status</td>
-                                    <td>Image</td>
-                                    <td>Tags</td>
-                                    <td>Comments</td>
-                                    <td>Date</td>
-                                </tr>
-                            </tbody>
+                        $source = $_GET['source'];
 
-                        </table>
+                    } else {
+                        $source = ' ';
+                    }
+
+                    switch ($source){
+
+                            case '34';
+                            echo "34";
+                            break;
+
+                            case '100';
+                            echo "100";
+                            break;
+
+                            case '200';
+                            echo "200";
+                            break;
+
+                        default:
+
+                            include "includes/view_all_posts.php";
+
+                            break;
+                    }
+
+
+                    ?>
 
 
                 </div>
