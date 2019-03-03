@@ -1,5 +1,16 @@
 <?php
 
+function comfirmQuery($result){
+    global $connection;
+
+ if(!$result){
+
+        die ("query fail".mysqli_error($connection));
+    }
+
+
+}
+
 function insert_categories(){
 
     global $connection;
@@ -63,6 +74,7 @@ function deleteCategories(){
                          }
 
 }
+
 
 
 

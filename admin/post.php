@@ -44,8 +44,8 @@
                             include "includes/add_post.php";
                             break;
 
-                            case '100';
-                            echo "100";
+                            case 'edit_post';
+                            echo "includes/edit_post.php";
                             break;
 
                             case '200';
