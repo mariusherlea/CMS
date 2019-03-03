@@ -45,7 +45,7 @@
                             break;
 
                             case 'edit_post';
-                            echo "includes/edit_post.php";
+                            include "includes/edit_post.php";
                             break;
 
                             case '200';

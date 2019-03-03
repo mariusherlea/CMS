@@ -47,8 +47,9 @@
                  echo "<td>{$post_tags}</td>";
                 echo "<td>{$post_comment_count}</td>";
                  echo "<td>{$post_date}</td>";
-            echo "<td><a href='post.php?delete={$post_id}'>Delete</a>";
-//                echo "<a href='categories.php?update={$cat_id}'>     Update</a></td>";
+                echo "<td><a href='post.php?source=edit_post&p_id={$post_id}'>Update</a>";
+                echo "<a href='post.php?delete={$post_id}'>        Delete</a></td>";
+
 
      }
 
