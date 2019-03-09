@@ -40,12 +40,12 @@
 
                     switch ($source){
 
-                            case 'add_post';
+                            case 'add_comment';
 
                             break;
 
                             case 'edit_post';
-                            include "includes/edit_post.php";
+                            include "includes/edit_comment.php";
                             break;
 
                             case '200';
