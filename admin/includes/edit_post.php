@@ -29,7 +29,7 @@ if(isset($_POST['update_post'])){
     $post_author = $_POST['post_author'];
     $post_title = $_POST['post_title'];
     $post_category_id = $_POST['post_category'];
-    //$post_status = $_POST['post_status'];
+    $post_status = $_POST['post_status'];
     //$post_image = $_FILES['image']['name'];
     //$post_image_temp = $_FILES['image']['name'];
     $post_content = $_POST['post_content'];
@@ -44,7 +44,7 @@ if(isset($_POST['update_post'])){
     $query .="post_category_id = '{$post_category_id}', ";
     $query .="post_date = now(), ";
     $query .="post_author = '{$post_author}', ";
-    //$query .="post_status = '{$post_status}', ";
+   $query .="post_status = '{$post_status}', ";
     $query .="post_tags = '{$post_tags}', ";
     $query .="post_content = '{$post_content}' ";
    // $query .="post_image = '{$post_image}' ";
@@ -110,9 +110,6 @@ if(isset($_POST['update_post'])){
       </div>
 
 
-    <div class="form-group">
-         <img  width="100" src="../images/<?php echo $post_image; ?>" alt="">
-      </div>
 
        <div class="form-group">
          <label for="post_tags">Post Tags</label>
@@ -127,6 +124,34 @@ if(isset($_POST['update_post'])){
          </textarea>
       </div>
 
+ <div class="form-group">
+      <select name="post_status" id="">
+
+<option value='<?php echo $post_status ?>'><?php echo $post_status; ?></option>
+
+          <?php
+
+          if($post_status == 'published' ) {
+
+
+    echo "<option value='draft'>Draft</option>";
+
+
+          } else {
+
+
+    echo "<option value='published'>Publish</option>";
+
+
+          }
+
+
+
+        ?>
+
+
+      </select>
+        </div>
 
 
 
