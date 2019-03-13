@@ -51,7 +51,7 @@
 
                                 $cat_id = $_GET['update'];
 
-                            include "includes/edit-categ.php";
+                            include "includes/edit_categ.php";
 
 
                             }
