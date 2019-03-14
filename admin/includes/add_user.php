@@ -3,31 +3,22 @@
 if(isset($_POST['create_user'])){
 
 
-          echo  $user_firstname       = $_POST['user_firstname'];
-            $user_lastname  = $_POST['user_lastname'];
-            $user_role      = $_POST['user_role'];
-
-//            $post_image        = $_FILES['image']['name'];
-//            $post_image_temp   = $_FILES['image']['tmp_name'];
-
-
-            $username         = $_POST['username'];
-            $user_email      = $_POST['user_email'];
-            $user_password      = $_POST['user_password'];
-//            $post_date         = date('d-m-y');
-//            $post_comment_count = 4;
-
-//    move_uploaded_file($post_image_temp, "../images/$post_image");
+        $user_firstname       = $_POST['user_firstname'];
+        $user_lastname  = $_POST['user_lastname'];
+        $user_role      = $_POST['user_role'];
+        $username         = $_POST['username'];
+        $user_email      = $_POST['user_email'];
+        $user_password      = $_POST['user_password'];
 
 
-//   $query = "INSERT INTO user(post_category_id, post_title, post_author, post_date,post_content,post_tags,post_status) ";
-//
-//      $query .= "VALUES({$post_category_id},'{$post_title}','{$post_author}',now(),'{$post_content}','{$post_tags}', '{$post_status}') ";
-//
-//      $create_post_query = mysqli_query($connection, $query);
-//
-//      comfirmQuery($create_post_query);
-//
+ $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password) ";
+
+      $query .= "VALUES('{$user_firstname}','{$user_lastname}','{$user_role}','{$username}','{$user_email}','{$user_password}') ";
+
+      $create_post_query = mysqli_query($connection, $query);
+
+      comfirmQuery($create_post_query);
+
 
 }
 ?>
