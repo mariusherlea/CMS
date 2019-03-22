@@ -44,11 +44,11 @@
 
 <?php
 
-                        $query = "SELECT * FROM posts ";
-                        $select_all_post = mysqli_query ($connection, $query);
-                        $post_counts = mysqli_num_rows ($select_all_post);
+            $query = "SELECT * FROM posts ";
+            $select_all_post = mysqli_query ($connection, $query);
+            $post_counts = mysqli_num_rows ($select_all_post);
 
-echo "<div class='huge'>{$post_counts}</div>";
+            echo "<div class='huge'>{$post_counts}</div>";
 
     ?>
 
@@ -76,11 +76,11 @@ echo "<div class='huge'>{$post_counts}</div>";
                     <div class="col-xs-9 text-right">
                      <?php
 
-                        $query = "SELECT * FROM comments ";
-                        $select_all_comments = mysqli_query ($connection, $query);
-                        $comment_count = mysqli_num_rows ($select_all_comments);
+    $query = "SELECT * FROM comments ";
+    $select_all_comments = mysqli_query ($connection, $query);
+    $comment_count = mysqli_num_rows ($select_all_comments);
 
-echo "<div class='huge'>{$comment_count}</div>";
+    echo "<div class='huge'>{$comment_count}</div>";
 
     ?>
                       <div>Comments</div>
@@ -106,11 +106,11 @@ echo "<div class='huge'>{$comment_count}</div>";
                     <div class="col-xs-9 text-right">
                    <?php
 
-                        $query = "SELECT * FROM users ";
-                        $select_all_users = mysqli_query ($connection, $query);
-                        $user_counts = mysqli_num_rows ($select_all_users);
+                $query = "SELECT * FROM users ";
+                $select_all_users = mysqli_query ($connection, $query);
+                $user_counts = mysqli_num_rows ($select_all_users);
 
-echo "<div class='huge'>{$user_counts}</div>";
+                echo "<div class='huge'>{$user_counts}</div>";
 
     ?>
                         <div> Users</div>
@@ -170,17 +170,30 @@ echo "<div class='huge'>{$cat_counts}</div>";
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
+          [' Date ', 'Count'],
+
+
+            <?php
+
+            $elements_text = ['Active Posts', 'Category', 'Users', 'Comments'];
+            $elements_count = [$post_counts, $cat_counts, $user_counts, $comment_count];
+
+            for ($i =0 ; $i<4; $i++){
+
+                echo "['{$elements_text[$i]}'" . ","."{$elements_count[$i]}],";
+
+            }
+
+            ?>
+
+//          ['Posts', 1000],
+
         ]);
 
         var options = {
           chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+            title: ' ',
+            subtitle: ' ',
           }
         };
 
@@ -190,7 +203,7 @@ echo "<div class='huge'>{$cat_counts}</div>";
       }
     </script>
 
-            <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+<div id="columnchart_material" style="width: 'auto'; height: 500px;"></div>
 
        </div>
        </div>
