@@ -54,6 +54,10 @@ if(isset($_POST['update_post'])){
 
     comfirmQuery($update_post);
 
+    echo "<p class='bg-success'>Post updated. <a href='../post.php?p_id={$the_post_id}'>View Post  </a>or<a href='post.php'>             Edit Other Post</a></p>";
+    echo "";
+
+
 }
 
 
@@ -120,8 +124,18 @@ if(isset($_POST['update_post'])){
 
       <div class="form-group">
          <label for="post_content">Post Content</label>
-         <textarea class="form-control"  name="post_content" id="body" cols="30" rows="10"><?php echo $post_content; ?>
+         <textarea class="form-control"  name="post_content" id="editor1" cols="30" rows="10"><?php echo $post_content; ?>
+
+
+
          </textarea>
+
+         <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+
       </div>
 
  <div class="form-group">
