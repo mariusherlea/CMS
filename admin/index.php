@@ -162,6 +162,29 @@ echo "<div class='huge'>{$cat_counts}</div>";
 
             <!-- /.container-fluid -->
 
+
+            <?php
+
+            $query = "SELECT * FROM posts WHERE post_status = 'draft' ";
+            $select_all_draft_post = mysqli_query ($connection, $query);
+            $post_draft_counts = mysqli_num_rows ($select_all_draft_post);
+
+                 $query = "SELECT * FROM posts WHERE post_status = 'published' ";
+            $select_all_pub_post = mysqli_query ($connection, $query);
+            $post_pub_counts = mysqli_num_rows ($select_all_pub_post);
+
+
+            $query = "SELECT * FROM comments WHERE comment_status = 'unapproved' ";
+            $select_all_unaproved_comments = mysqli_query ($connection, $query);
+            $unaproved_comment_counts = mysqli_num_rows ($select_all_unaproved_comments);
+
+
+            $query = "SELECT * FROM users WHERE user_role = 'subscriber' ";
+            $select_all_subscriber = mysqli_query ($connection, $query);
+            $counts_all_subscriber = mysqli_num_rows ($select_all_subscriber);
+
+                ?>
+
        <div class="row">
 
            <script type="text/javascript">
@@ -175,10 +198,10 @@ echo "<div class='huge'>{$cat_counts}</div>";
 
             <?php
 
-            $elements_text = ['Active Posts', 'Category', 'Users', 'Comments'];
-            $elements_count = [$post_counts, $cat_counts, $user_counts, $comment_count];
+            $elements_text = ['All Posts','Active Posts', 'Draft', 'Comments unaproved', 'Category', 'Users', 'Subscriber', 'Comments'];
+            $elements_count = [$post_pub_counts, $post_counts, $post_draft_counts, $unaproved_comment_counts, $cat_counts, $user_counts, $counts_all_subscriber, $comment_count];
 
-            for ($i =0 ; $i<4; $i++){
+            for ($i =0 ; $i<8; $i++){
 
                 echo "['{$elements_text[$i]}'" . ","."{$elements_count[$i]}],";
 

@@ -36,7 +36,7 @@
 
             if($post_status !== 'published'){
 
-                echo "<h1>NO POST HERE</h1>";
+
 
             } else {
 

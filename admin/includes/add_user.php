@@ -20,6 +20,8 @@ if(isset($_POST['create_user'])){
       comfirmQuery($create_post_query);
 
 
+    echo "User added: ". " "."<a href='users.php'>View Users</a>";
+
 }
 ?>
 
