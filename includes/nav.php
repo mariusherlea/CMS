@@ -24,26 +24,41 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-
-
-                   <?php
+<?php
 
                      $query = "SELECT * FROM categories";
                     $select_all_categories_query = mysqli_query($connection, $query);
 
-                     while($row = mysqli_fetch_assoc($select_all_categories_query)){
-                        $cat_title = $row['cat_title'];
 
-                          echo "<li><a href='#'>{$cat_title}</a></li>";
-                     }
 
                     ?>
+
+
+
+
+                                <?php while($row = mysqli_fetch_assoc($select_all_categories_query)){
+                        $cat_title = $row['cat_title'];
+    $cat_id = $row['cat_id'];
+
+                          echo "<li><a href='category.php?category=$cat_id'>{$cat_title}</a></li>";
+                     }?>
+
+
+                        <!-- /.col-lg-6 -->
+
+
+
+
 
 
 
                        <li>
                         <a href="admin">Admin</a>
                     </li>
+                    <li>
+                        <a href="registration.php">Registration</a>
+                    </li>
+
 
                     <?php
 

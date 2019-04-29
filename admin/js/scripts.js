@@ -2,7 +2,7 @@ $(document).ready(function () {
                  ('#selectAllBoxes').click(function (Event) {
 
 
-                      if (this.checked){
+                      if (this.checked) {
 
                           $('.checkBoxes').each(function () {
                               this.checked=true;

@@ -80,7 +80,7 @@
 
         echo "<td><a href='comments.php?approve=$comment_id'>Aprove</a>";
         echo "<td><a href='comments.php?unapprove=$comment_id'>Unaprove</a></td>";
-        echo "<td><a href='comments.php?delete=$comment_id'>Delete</a></td>";
+        echo "<td><a onClick=\"javascript: return confirm('Are you sure you want to delete ?'); \" href='comments.php?delete=$comment_id'>Delete</a></td>";
 
 
      }
